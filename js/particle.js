@@ -54,7 +54,6 @@ function xCollision(particle){
     // if((particle.dx < 0 && particle.x - particle.radius < 0) || (particle.x + particle.radius > canvas.width && particle.dx > 0))
     //     particle.dx = -particle.dx;
     //move to other side
-    console.log("x");
     if(particle.x - particle.radius < 0){
         particle.x = canvas.width-particle.radius;
     }
