@@ -25,8 +25,14 @@ var particles;
 function init(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
+    
     particles = [];
+    
+    if(canvas.height < canvas.width){
+        w = canvas.height/3;
+    } else {
+        w = canvas.width/3;
+    }
 
     for(let i = 0; i < w; i++){
         let radius = 10;
@@ -52,12 +58,6 @@ function animate(){
     }
     for(let i = 0; i < particles.length; i++){
         particles[i].checkCollision();
-    }
-
-    if(canvas.height < canvas.width){
-        w = 2*canvas.height/4;
-    } else {
-        w = 2*canvas.width/4;
     }
 }
 
