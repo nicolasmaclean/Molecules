@@ -4,6 +4,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
+var w = 500;
 
 // var par1 = new Particle(100, 200, 4, -4, 80, "blue");
 // var par2 = new Particle(500, 400, -3, 3, 100, "black");
@@ -27,7 +28,7 @@ function init(){
 
     particles = [];
 
-    for(let i = 0; i < 500; i++){
+    for(let i = 0; i < w; i++){
         let radius = 10;
         let x = radius + Math.random()*(canvas.width-radius*2);
         let y = radius + Math.random()*(canvas.height-radius*2);
@@ -51,6 +52,12 @@ function animate(){
     }
     for(let i = 0; i < particles.length; i++){
         particles[i].checkCollision();
+    }
+
+    if(canvas.height < canvas.width){
+        w = 2*canvas.height/4;
+    } else {
+        w = 2*canvas.width/4;
     }
 }
 
